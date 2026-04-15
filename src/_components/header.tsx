@@ -16,11 +16,11 @@ export const Header = () => {
           href={SOURCECODE_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          class="<sm:hidden"
+          class="max-sm:hidden"
         >
           <img
             alt="GitHub Icon"
-            class="w-4 <sm:hidden"
+            class="w-4 max-sm:hidden"
             src="https://cdn.simpleicons.org/github/white"
           />
         </a>

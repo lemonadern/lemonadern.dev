@@ -1,31 +1,31 @@
 {
   "lock": false,
-  "importMap": "./import_map.json",
+  "imports": {
+    "@/": "./src/",
+    "components/": "./src/_components/",
+    "constants/": "./src/_constants/",
+    "utils/": "./src/_utils/",
+    "lume/": "https://cdn.jsdelivr.net/gh/lumeland/lume@3.2.4/",
+    "lume/jsx-runtime": "https://deno.land/x/ssx@v0.1.14/jsx-runtime.ts"
+  },
   "tasks": {
-    "lume": "echo \"import 'lume/cli.ts'\" | deno run --unstable -A -",
+    "lume": "deno run -A lume/cli.ts",
     "build": "deno task lume",
     "serve": "deno task lume -s",
-    // esm
-    "esm:add": "deno run -A https://esm.sh/v102 add",
-    "esm:update": "deno run -A https://esm.sh/v102 update",
-    "esm:remove": "deno run -A https://esm.sh/v102 remove",
     "today": "sh create_todays_nightly.sh",
     "nightly": "sh create_nightly.sh",
     "essay": "sh create_essay.sh"
   },
+  "unstable": ["temporal"],
   "compilerOptions": {
     "jsx": "react-jsx",
-    "jsxImportSource": "npm:preact",
-
-    // override deno default configuraion (tsconfig/bases/strictest.json)
-    // (deno: v1.29.2)
+    "jsxImportSource": "lume",
+    "types": ["lume/types.ts"],
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-
-    // additional configuration from tsconfig/bases/strictest.json
     "exactOptionalPropertyTypes": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true

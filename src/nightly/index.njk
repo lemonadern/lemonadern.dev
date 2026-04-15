@@ -11,12 +11,12 @@ metas:
     <h1 class="text-xl text-gray-600">新しい日報</h1>
   </div>
 
-  <div class="flex flex-wrap gap-8 min-w-9/10 <sm:w-8/10 justify-center mx-auto">
+  <div class="flex flex-wrap gap-8 min-w-9/10 max-sm:w-8/10 justify-center mx-auto">
     {% for post in search.pages("page_type=nightly", "date=desc") %}
-      <a href={{ post.data.url }} class="container xl:w-1/4 lg:w-1/3 >lg:w-4/5 border rounded-md py-5 hover:bg-light-300">
+      <a href="{{ post.url }}" class="container xl:w-1/4 lg:w-1/3 xl:w-4/5 border rounded-md py-5 hover:bg-light-300">
         <article class="flex flex-col frex-wrap text-center max-w-1/1 mx-auto px-2">
-          <h2 class="text-xl font-semibold">{{ post.data.title | date('DATE') }}</h2>
-          <p class="text-base pt-3 opacity-70">{{ post.data.overview }}</p>
+          <h2 class="text-xl font-semibold">{{ post.title | date('DATE') }}</h2>
+          <p class="text-base pt-3 opacity-70">{{ post.overview }}</p>
         </article>
       </a>
     {% endfor %}

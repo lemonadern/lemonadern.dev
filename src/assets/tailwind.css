@@ -1,0 +1,67 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@layer base {
+  *, ::before, ::after {
+    border-color: #e5e7eb;
+  }
+}
+
+@theme {
+  /* カスタムカラー */
+  --color-color-kakuitsu-primary: #657664;
+  --color-color-kakuitsu2-primary: #415740;
+  --color-color-kakuitsu-secondary: #F3FAF3;
+  --color-color-octoammo-primary: #CCAF87;
+  --color-color-hakanai-tour-primary: #413839;
+  --color-color-hakanai-tour-secondary: #FDFDFD;
+  --color-color-tetora-dec-primary: #9A86BA;
+  --color-color-tetora-dec-secondary: #A08ABE;
+  --color-color-tetora-dec-tertiary: #FCF8FE;
+  --color-color-tetora-live-dvd-head: #745B80;
+  --color-color-tetora-live-dvd-body: #7475AE;
+  --color-color-tetora-live-dvd-white: #FCFDF8;
+  --color-fresh-marine-blue: #80c7d8;
+  --color-fresh-marine-white: #f0fbfd;
+
+  /* hover:bg-light-300 の代替色 (WindiCSS の light-300 = #e5e7eb 相当) */
+  --color-light-300: #e5e7eb;
+
+  /* カスタムフォント (TW v4 のトークン名前空間は --font-*) */
+  --font-title: "Black Ops One", cursive;
+}
+
+/*
+  md-prose クラスの方針:
+  articleSection.tsx の class を "prose md-prose ..." に変更して
+  @tailwindcss/typography の prose クラスをベースにし、
+  差分だけここで上書きする。
+*/
+.md-prose a {
+  color: #3182ce;
+  word-break: break-all;
+  text-decoration-line: none;
+}
+
+.md-prose a:hover {
+  color: #2c5282;
+  text-decoration-line: underline;
+}
+
+.md-prose sup a {
+  word-break: normal;
+}
+
+.md-prose :not(pre) > code {
+  background-color: #e5e5e5;
+  padding: 0.1rem 0.25rem;
+  font-weight: normal;
+  border-radius: 2px;
+}
+
+.md-prose ul code::before,
+.md-prose ul code::after,
+.md-prose p code::before,
+.md-prose p code::after {
+  content: none;
+}

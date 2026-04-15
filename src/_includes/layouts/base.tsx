@@ -23,6 +23,7 @@ const Base = ({ title, children }: Props) => {
           rel="stylesheet"
         >
         </link>
+        <link rel="stylesheet" href="/assets/tailwind.css" />
         {/* katex styles */}
         <link
           rel="stylesheet"
@@ -30,7 +31,7 @@ const Base = ({ title, children }: Props) => {
         >
         </link>
       </head>
-      <body class="min-h-screen grid grid-rows-[min-content,1fr,min-content] grid-cols-1 bg-fresh-marine-white">
+      <body class="min-h-screen grid grid-rows-[min-content_1fr_min-content] grid-cols-1 bg-fresh-marine-white">
         <Header />
         <main>{children}</main>
         <Footer />
