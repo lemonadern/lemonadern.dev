@@ -52,6 +52,10 @@
   word-break: normal;
 }
 
+.md-prose img {
+  margin-inline: auto;
+}
+
 .md-prose :not(pre) > code {
   background-color: #e5e5e5;
   padding: 0.1rem 0.25rem;
