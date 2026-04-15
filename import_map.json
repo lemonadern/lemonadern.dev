@@ -1,9 +1,0 @@
-{
-  "imports": {
-    "@/": "./src/",
-    "components/": "./src/_components/",
-    "constants/": "./src/_constants/",
-    "utils/": "./src/_utils/",
-    "lume/": "https://deno.land/x/lume@v1.14.2/"
-  }
-}
