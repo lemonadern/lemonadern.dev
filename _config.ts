@@ -27,6 +27,18 @@ site.use(basePath())
   .use(date())
   .use(katex());
 
+site.preprocess([".md"], (pages) => {
+  for (const page of pages) {
+    const match = page.sourcePath.match(
+      /^\/nightly\/(\d{4}\/\d{2}\/\d{2})\/\d{4}-\d{2}-\d{2}_index\.md$/,
+    );
+
+    if (match) {
+      page.data.url = `/nightly/${match[1]}/`;
+    }
+  }
+});
+
 // 画像等のアセット: site.add() はソース側のパスを指定
 site.add([".png", ".jpg", ".gif", ".svg", ".webp"]);
 site.add("/assets/tailwind.css");
