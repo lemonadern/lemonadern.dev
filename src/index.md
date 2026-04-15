@@ -10,12 +10,13 @@ Web と計算機が好きです。
 
 ### Social
 
-- GitHub: https://github.com/lemonadern
-- BlueSky: https://bsky.app/profile/lemonadern.dev
-- Zenn: https://zenn.dev/lemonadern
-- しずみー: https://sizu.me/lemonadern
-- Scrapbox: https://scrapbox.io/lemonadern/
-- Twitter: https://twitter.com/lemonadern
+- [GitHub](https://github.com/lemonadern)
+- [BlueSky](https://bsky.app/profile/lemonadern.dev)
+- [Zenn](https://zenn.dev/lemonadern)
+- [しずかなインターネット](https://sizu.me/lemonadern)
+- [器楽的緩怠 （はてなブログ）](https://lemonadern.hatenablog.com/archive)
+- [Cosense (formerly Scrapbox)](https://scrapbox.io/lemonadern/)
+- [X (formerly Twitter)](https://twitter.com/lemonadern)
 
 ### Book
 
