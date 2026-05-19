@@ -3,7 +3,7 @@ template = "home.html"
 
 [extra]
 lang = "ja"
-footer = false
+footer = true
 name = "lemonadern"
 id = "lemonadern"
 bio = "Zola + serene の試作用サイト"
