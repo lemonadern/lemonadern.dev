@@ -110,6 +110,30 @@
           {% endif %}
         </div>
 
+        {% if show_toc and page.toc %}
+        <details class="mobile-toc">
+          <summary>Table of Contents</summary>
+          <nav aria-label="Table of contents">
+            <ul>
+              {% for h2 in page.toc %}
+              <li>
+                <a class="h2" href="#{{ h2.id | safe }}">{{ h2.title }}</a>
+                {% if h2.children %}
+                <ul>
+                  {% for h3 in h2.children %}
+                  <li>
+                    <a class="h3" href="#{{ h3.id | safe }}">{{ h3.title }}</a>
+                  </li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+              </li>
+              {% endfor %}
+            </ul>
+          </nav>
+        </details>
+        {% endif %}
+
         {% if page.extra.outdate_alert is defined %}{% set show_outdate_alert = page.extra.outdate_alert %}{% else %}{% set show_outdate_alert = section.extra.outdate_alert %}{% endif %}
         {% if page.extra.outdate_alert_days is defined %}{% set outdate_alert_days = page.extra.outdate_alert_days %}{% else %}{% set outdate_alert_days = section.extra.outdate_alert_days %}{% endif %}
 

@@ -67,6 +67,10 @@
     padding: 0 1rem 0.4rem 3rem;
   }
 
+  .mobile-toc {
+    display: none;
+  }
+
   .post-pagination {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -109,7 +113,7 @@
     color: var(--primary-color);
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 1040px) {
     .site-header-inner {
       width: min(100% - 1.5rem, var(--main-max-width));
       padding: 0.4rem 0;
@@ -120,6 +124,79 @@
 
     .post-pagination {
       grid-template-columns: 1fr;
+    }
+
+    body.post aside nav {
+      display: none;
+    }
+
+    article.prose .mobile-toc {
+      display: block;
+      margin: 0 15px 1.75rem;
+      border: 1px solid color-mix(in srgb, var(--text-decoration-color) 70%, transparent);
+      border-radius: 12px;
+      background: color-mix(in srgb, var(--primary-color) 1.5%, var(--bg-color));
+      overflow: hidden;
+      box-shadow: none;
+    }
+
+    article.prose .mobile-toc summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 0.28rem 0.5rem;
+      color: var(--text-pale-color);
+      font-size: 0.88rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      border: 0;
+      background: transparent;
+    }
+
+    article.prose .mobile-toc summary::-webkit-details-marker {
+      display: none;
+    }
+
+    article.prose .mobile-toc summary::after {
+      content: "+";
+      color: var(--text-pale-color);
+      font-size: 0.9rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    article.prose .mobile-toc[open] summary::after {
+      content: "-";
+    }
+
+    article.prose .mobile-toc nav {
+      padding: 0 0.5rem 0.34rem;
+      color: var(--text-pale-color);
+    }
+
+    article.prose .mobile-toc ul {
+      margin: 0;
+      padding-left: 1.1rem;
+    }
+
+    article.prose .mobile-toc li + li {
+      margin-top: 0.45rem;
+    }
+
+    article.prose .mobile-toc ul ul {
+      margin-top: 0.45rem;
+    }
+
+    article.prose .mobile-toc a {
+      color: var(--text-pale-color);
+      text-decoration: none;
+      font-size: 0.88rem;
+    }
+
+    article.prose .mobile-toc a:hover {
+      color: var(--primary-color);
     }
   }
 </style>
