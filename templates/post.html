@@ -54,6 +54,7 @@
     {% if page.extra.toc is defined %}{% set show_toc = page.extra.toc %}{% else %}{% set show_toc = section.extra.toc %}{% endif %}
     {% if show_toc and page.toc %}
     <nav>
+      <div class="toc-label">ToC</div>
       <ul>
         {% for h2 in page.toc %}
         <li>
