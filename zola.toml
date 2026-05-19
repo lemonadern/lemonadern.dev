@@ -1,5 +1,5 @@
 base_url = "https://example.com"
-title = "my-own-serena"
+title = "器楽的緩怠"
 description = "A Zola playground for theme customization."
 default_language = "ja"
 theme = "serene"

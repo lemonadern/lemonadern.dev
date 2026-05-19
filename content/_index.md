@@ -4,11 +4,11 @@ template = "home.html"
 [extra]
 lang = "ja"
 footer = true
-name = "lemonadern"
+name = "器楽的緩怠"
 id = "lemonadern"
 bio = "Zola + serene の試作用サイト"
 links = []
-recent = false
+recent = true
 recent_max = 5
 recent_more_text = "more »"
 date_format = "%Y-%m-%d"
