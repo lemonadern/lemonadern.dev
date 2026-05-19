@@ -30,7 +30,9 @@
     }
   </script>
   {% endif %}
+  {% block header %}
   {% include "_header.html" %}
+  {% endblock header %}
   {% block content %}{% endblock content %}
   {% block script %}{% endblock script %}
   <script src="{{ get_url(path='js/main.js') }}"></script>

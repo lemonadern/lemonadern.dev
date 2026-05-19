@@ -36,8 +36,12 @@
   }
 
   body.blog #wrapper,
+  body.prose-page #wrapper,
   body.tag-list #wrapper,
   body.tag-single #wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
     min-height: auto;
   }
 
@@ -95,7 +99,7 @@
       width: min(100% - 1.5rem, var(--main-max-width));
       padding: 0.4rem 0;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       gap: 0.5rem;
     }
 
