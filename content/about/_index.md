@@ -1,13 +1,13 @@
 +++
 title = "About"
-description = "About this serene playground."
+description = "Taishi Naka (lemonadern)"
 template = "prose.html"
 insert_anchor_links = "right"
 
 [extra]
 lang = "ja"
 title = "About"
-subtitle = "A small page for profile and site notes"
+subtitle = "Taishi Naka (lemonadern)"
 math = false
 mermaid = false
 copy = false
@@ -15,15 +15,36 @@ comment = false
 reaction = false
 +++
 
-`serene` をベースにしたブログ試作用サイトです。
 
-今は実コンテンツ移行の前段として、テーマの見た目、導線、記事体験を先に固めています。
+Web と計算機が好きです。
 
-## What I want to check
+## リンク
 
-- トップから各ページへの導線
-- 記事ページの TOC と本文レイアウト
-- Markdown 要素の見え方
-- 今後のカスタマイズ余地
+### Social
 
-本番移行の前に、ここで土台だけ先に整えるつもりです。
+- [GitHub](https://github.com/lemonadern)
+- [BlueSky](https://bsky.app/profile/lemonadern.dev)
+- [Zenn](https://zenn.dev/lemonadern)
+- [しずかなインターネット](https://sizu.me/lemonadern)
+- [器楽的緩怠 （はてなブログ）](https://lemonadern.hatenablog.com/archive)
+- [Cosense (formerly Scrapbox)](https://scrapbox.io/lemonadern/)
+- [X (formerly Twitter)](https://twitter.com/lemonadern)
+
+### Book
+
+- [読みたい本リスト（Amazon）](https://www.amazon.co.jp/hz/wishlist/ls/14QM3K8A7R548?type=wishlist&filter=unpurchased&sort=priority&viewType=list)
+
+<!--
+### Others
+
+- [Nightly（日報）](nightly/) :tada:
+- [Essay](essay/) :tada: -->
+
+<!--
+
+- [Weekly](weekly/) :tada:
+- [Monthly](monthly/) :tada:
+
+ -->
+
+<!-- - [Blog](blog/) :construction: -->

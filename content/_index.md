@@ -6,7 +6,7 @@ lang = "ja"
 footer = true
 name = "器楽的緩怠"
 id = "lemonadern"
-bio = "Zola + serene の試作用サイト"
+bio = "Web と計算機が好きです。"
 links = []
 recent = true
 recent_max = 5
@@ -14,4 +14,4 @@ recent_more_text = "more »"
 date_format = "%Y-%m-%d"
 +++
 
-`serene` を土台にして、まずは見た目とテンプレートの手触りを確認するための最小構成です。
+個人ブログを `lume` から `Zola + serene` に移行している途中です。

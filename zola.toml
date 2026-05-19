@@ -1,6 +1,6 @@
-base_url = "https://example.com"
+base_url = "https://lemonadern.dev"
 title = "器楽的緩怠"
-description = "A Zola playground for theme customization."
+description = "Taishi Naka (lemonadern) の個人ブログ"
 default_language = "ja"
 theme = "serene"
 output_dir = "public"
@@ -12,11 +12,11 @@ feed_filenames = ["feed.xml"]
 taxonomies = [{ name = "tags" }, { name = "categories" }]
 
 [markdown]
-render_emoji = false
-external_links_target_blank = false
-external_links_no_follow = true
+render_emoji = true
+external_links_target_blank = true
+external_links_no_follow = false
 external_links_no_referrer = true
-smart_punctuation = false
+smart_punctuation = true
 github_alerts = true
 
 [markdown.highlighting]

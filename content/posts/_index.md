@@ -1,18 +1,14 @@
 +++
 title = "Posts"
-description = "Posts for serene playground."
-sort_by = "date"
-template = "blog.html"
-page_template = "post.html"
+description = "Blog and essay posts."
+template = "posts.html"
 insert_anchor_links = "right"
-generate_feeds = true
 
 [extra]
 lang = "ja"
 title = "Posts"
-subtitle = "Theme exploration notes"
+subtitle = "blog + essay"
 date_format = "%Y-%m-%d"
-categorized = false
 back_to_top = true
 toc = true
 comment = false
