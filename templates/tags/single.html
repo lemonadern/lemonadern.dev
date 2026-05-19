@@ -1,0 +1,25 @@
+{% extends "serene/templates/tags/single.html" %}
+
+{% block content %}
+<div id="wrapper">
+  <header>
+    <nav>
+      <a id="back-link" href="{{ get_url(path='/tags') }}">← Tags</a>
+    </nav>
+  </header>
+  <main class="layout-list">
+    <div class="title">
+      <span># {{ term.name }}</span>
+    </div>
+    <div class="post-list">
+      {% for post in term.pages %}
+      <a class="post instant {% if post.extra.featured %}featured{% endif %}" href="{{ post.permalink }}">
+        <span>{{ post.title }}</span>
+        <span class="date">{{ post.date | date(format=section.extra.date_format) }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </main>
+  {% include "_footer.html" %}
+</div>
+{% endblock content %}
