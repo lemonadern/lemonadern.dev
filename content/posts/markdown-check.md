@@ -108,12 +108,12 @@ $$
 
 ## Mermaid
 
-```mermaid
+{% mermaid() %}
 flowchart TD
     A[Write sample page] --> B[Open in browser]
     B --> C[Adjust styles]
     C --> D[Repeat]
-```
+{% end %}
 
 ## Horizontal Rule
 
