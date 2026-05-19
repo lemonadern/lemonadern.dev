@@ -125,6 +125,36 @@
     color: var(--primary-color);
   }
 
+  article.prose.show-heading-hashes h2::before,
+  article.prose.show-heading-hashes h3::before,
+  article.prose.show-heading-hashes h4::before,
+  article.prose.show-heading-hashes h5::before,
+  article.prose.show-heading-hashes h6::before {
+    color: var(--text-pale-color);
+    font-weight: 400;
+    margin-right: 0.45rem;
+  }
+
+  article.prose.show-heading-hashes h2::before {
+    content: "##";
+  }
+
+  article.prose.show-heading-hashes h3::before {
+    content: "###";
+  }
+
+  article.prose.show-heading-hashes h4::before {
+    content: "####";
+  }
+
+  article.prose.show-heading-hashes h5::before {
+    content: "#####";
+  }
+
+  article.prose.show-heading-hashes h6::before {
+    content: "######";
+  }
+
   @media (max-width: 1040px) {
     .site-header-inner {
       width: min(100% - 1.5rem, var(--main-max-width));

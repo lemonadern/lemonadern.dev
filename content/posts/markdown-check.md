@@ -15,6 +15,7 @@ math = true
 mermaid = true
 comment = false
 reaction = false
+heading_hashes = true
 +++
 
 `serene` の Markdown 表示確認用ページです。スタイル調整のたびにここを見れば、主要な要素の崩れをまとめて確認できます。
