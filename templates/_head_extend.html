@@ -67,6 +67,18 @@
     padding: 0 1rem 0.4rem 3rem;
   }
 
+  body.post aside nav a,
+  article.prose .mobile-toc a {
+    transition: color 120ms ease;
+  }
+
+  body.post aside nav a.active,
+  body.post aside nav a.in-view,
+  article.prose .mobile-toc a.active,
+  article.prose .mobile-toc a.in-view {
+    color: var(--text-color);
+  }
+
   .mobile-toc {
     display: none;
   }
@@ -197,6 +209,11 @@
 
     article.prose .mobile-toc a:hover {
       color: var(--primary-color);
+    }
+
+    article.prose .mobile-toc a.active,
+    article.prose .mobile-toc a.in-view {
+      color: var(--text-color);
     }
   }
 </style>

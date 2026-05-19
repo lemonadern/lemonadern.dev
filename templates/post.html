@@ -184,6 +184,84 @@
 
 {% block script %}
 <script src="/js/lightense.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const headingSelector = "article.prose h2[id], article.prose h3[id]";
+    const headings = Array.from(document.querySelectorAll(headingSelector));
+    if (!headings.length) return;
+
+    const tocLinks = Array.from(
+      document.querySelectorAll('aside nav a[href^="#"], .mobile-toc a[href^="#"]')
+    );
+    if (!tocLinks.length) return;
+
+    const linksById = new Map();
+    for (const link of tocLinks) {
+      const id = decodeURIComponent(link.getAttribute("href").slice(1));
+      if (!linksById.has(id)) linksById.set(id, []);
+      linksById.get(id).push(link);
+    }
+
+    const clearActive = () => {
+      for (const link of tocLinks) {
+        link.classList.remove("active");
+        link.classList.remove("in-view");
+      }
+    };
+
+    const setActive = (activeId, visibleIds) => {
+      clearActive();
+      for (const id of visibleIds) {
+        const visibleLinks = linksById.get(id);
+        if (!visibleLinks) continue;
+        for (const link of visibleLinks) link.classList.add("in-view");
+      }
+
+      const matchedLinks = linksById.get(activeId);
+      if (!matchedLinks) return;
+      for (const link of matchedLinks) link.classList.add("active");
+    };
+
+    const findActiveHeading = () => {
+      const offset = 140;
+      let activeHeading = headings[0];
+      const visibleIds = new Set();
+      const viewportHeight = window.innerHeight;
+
+      for (const heading of headings) {
+        const rect = heading.getBoundingClientRect();
+
+        if (rect.top < viewportHeight && rect.bottom > offset) {
+          visibleIds.add(heading.id);
+        }
+
+        if (rect.top - offset <= 0) {
+          activeHeading = heading;
+        } else {
+          break;
+        }
+      }
+
+      visibleIds.add(activeHeading.id);
+      setActive(activeHeading.id, visibleIds);
+    };
+
+    let ticking = false;
+    const syncActiveHeading = () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(() => {
+        findActiveHeading();
+        ticking = false;
+      });
+    };
+
+    syncActiveHeading();
+    document.addEventListener("scroll", syncActiveHeading, { passive: true });
+    window.addEventListener("resize", syncActiveHeading);
+    window.addEventListener("hashchange", syncActiveHeading);
+  });
+</script>
 {% if page.extra.mermaid %}
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
