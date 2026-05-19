@@ -1,16 +1,47 @@
-# The URL the site will be built for
 base_url = "https://example.com"
-
-# Whether to automatically compile all Sass files in the sass directory
+title = "my-own-serena"
+description = "A Zola playground for theme customization."
+default_language = "ja"
+theme = "serene"
+output_dir = "public"
 compile_sass = true
-
-# Whether to build a search index to be used later on by a JavaScript library
+minify_html = false
 build_search_index = false
+generate_feeds = false
+feed_filenames = ["feed.xml"]
+taxonomies = [{ name = "tags" }, { name = "categories" }]
 
 [markdown]
+render_emoji = false
+external_links_target_blank = false
+external_links_no_follow = true
+external_links_no_referrer = true
+smart_punctuation = false
+github_alerts = true
 
 [markdown.highlighting]
-theme = "catppuccin-mocha"
+style = "class"
+light_theme = "github-light"
+dark_theme = "github-dark"
+
+[slugify]
+paths = "on"
+taxonomies = "on"
+anchors = "on"
 
 [extra]
-# Put all your custom variables here
+sections = [{ name = "posts", path = "/posts", is_external = false }]
+blog_section_path = "/posts"
+
+back_link_text = "Back"
+force_theme = false
+
+footer_copyright = "© 2026 lemonadern"
+footer_credits = true
+
+not_found_error_text = "404 Not Found"
+not_found_recover_text = "« back to home »"
+
+reaction = false
+reaction_align = "right"
+reaction_endpoint = "https://example.com/api/reaction"
