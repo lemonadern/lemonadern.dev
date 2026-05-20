@@ -4,7 +4,7 @@ description = "Daily notes archive."
 aliases = ["/nightly/"]
 sort_by = "date"
 template = "nightly.html"
-page_template = "post.html"
+page_template = "nightly-post.html"
 insert_anchor_links = "right"
 
 [extra]

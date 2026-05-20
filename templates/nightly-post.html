@@ -1,0 +1,292 @@
+{% import "macros/prose.html" as macros %}
+{% extends "_base.html" %}
+
+{% block page %}post{% endblock page %}
+{% block lang -%}
+{%- set current_section = get_section(path=page.ancestors | last, metadata_only=true) -%}
+{%- if page.extra.lang %}{{page.extra.lang}}{% elif current_section.extra.lang %}{{current_section.extra.lang}}{% else %}{{page.lang}}{% endif -%}
+{%- endblock lang %}
+{% block title %}{{ page.title }}{% endblock title %}
+{% block desc %}
+  {% set current_section = get_section(path=page.ancestors | last, metadata_only=true) %}
+  {% if page.summary %}
+    {% set desc = page.summary %}
+  {% elif page.description %}
+    {% set desc = page.description %}
+  {% elif current_section.description %}
+    {% set desc = current_section.description %}
+  {% else %}
+    {% set desc = config.description %}
+  {% endif %}
+  <meta name="description" content="{{ desc }}">
+{% endblock desc %}
+
+{% block head %}
+{% if config.markdown.highlighting.style == "class" %}
+<link id="hl" rel="stylesheet" type="text/css" href="/giallo-{% if config.extra.force_theme == "dark" %}dark{% else %}light{% endif %}.css" />
+{% endif %}
+{% if page.extra.math %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" integrity="sha384-HORx6nWi8j5/mYA+y57/9/CZc5z8HnEw4WUZWy5yOn9ToKBv1l58vJaufFAn9Zzi" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: '$$', right: '$$', display: true },
+                { left: '$', right: '$', display: false },
+                { left: '\\(', right: '\\)', display: false },
+                { left: '\\[', right: '\\]', display: true }
+            ],
+            throwOnError: false
+        });
+    });
+</script>
+{% endif %}
+{% endblock head %}
+
+{% block content %}
+{% set current_section = get_section(path=page.ancestors | last, metadata_only=true) %}
+{% set section = current_section %}
+<div id="wrapper">
+  <div id="blank"></div>
+  <aside>
+    {% if page.extra.toc is defined %}{% set show_toc = page.extra.toc %}{% else %}{% set show_toc = current_section.extra.toc %}{% endif %}
+    {% if show_toc and page.toc %}
+    <nav>
+      <div class="toc-label">ToC</div>
+      <ul>
+        {% for h2 in page.toc %}
+        <li>
+          <a class="h2" href="#{{ h2.id | safe }}">{{ h2.title }}</a>
+          {% if h2.children %}
+          <ul>
+            {% for h3 in h2.children %}
+            <li>
+              <a class="h3" href="#{{ h3.id | safe }}">{{ h3.title }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+    {% endif %}
+    {% if current_section.extra.back_to_top %}
+    <button id="back-to-top" aria-label="back to top">
+      {% set icon = load_data(path="icon/arrow-up.svg") %}
+      {{ icon | safe }}
+    </button>
+    {% endif %}
+  </aside>
+  <main>
+    {{ macros::back_link(path = get_url(path=current_section.path)) }}
+
+    <div>
+      {% if page.extra.copy is defined %}{% set allow_copy = page.extra.copy %}{% else %}{% set allow_copy = current_section.extra.copy %}{% endif %}
+      {% if page.extra.heading_hashes is defined %}{% set show_heading_hashes = page.extra.heading_hashes %}{% else %}{% set show_heading_hashes = false %}{% endif %}
+      {% if allow_copy %}
+      {% set copy_icon = load_data(path="icon/copy.svg") %}
+      {% set check_icon = load_data(path="icon/check.svg") %}
+      <div id="copy-cfg" style="display: none;" data-copy-icon="{{ copy_icon }}" data-check-icon="{{ check_icon }}"></div>
+      {% endif %}
+      <article class="prose{% if show_heading_hashes %} show-heading-hashes{% endif %}">
+        <h1>{{ page.title }}</h1>
+        {% if page.description %}
+        <p class="nightly-desc">{{ page.description }}</p>
+        {% endif %}
+        <div id="post-info">
+
+          {% if page.taxonomies.tags is defined %}
+          <div id="tags">
+            {% for tag in page.taxonomies.tags -%}
+            {% set tag_slugify = tag | slugify -%}
+            <a class="instant" href="{{ config.base_url ~ '/tags/' ~ tag_slugify }}"><span>#</span>{{ tag }}</a>
+            {%- endfor %}
+          </div>
+          {% endif %}
+        </div>
+
+        {% if show_toc and page.toc %}
+        <details class="mobile-toc">
+          <summary>Table of Contents</summary>
+          <nav aria-label="Table of contents">
+            <ul>
+              {% for h2 in page.toc %}
+              <li>
+                <a class="h2" href="#{{ h2.id | safe }}">{{ h2.title }}</a>
+                {% if h2.children %}
+                <ul>
+                  {% for h3 in h2.children %}
+                  <li>
+                    <a class="h3" href="#{{ h3.id | safe }}">{{ h3.title }}</a>
+                  </li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+              </li>
+              {% endfor %}
+            </ul>
+          </nav>
+        </details>
+        {% endif %}
+
+        {% if page.extra.outdate_alert is defined %}
+          {% set show_outdate_alert = page.extra.outdate_alert %}
+        {% elif current_section.extra.outdate_alert is defined %}
+          {% set show_outdate_alert = current_section.extra.outdate_alert %}
+        {% else %}
+          {% set show_outdate_alert = false %}
+        {% endif %}
+        {% if page.extra.outdate_alert_days is defined %}
+          {% set outdate_alert_days = page.extra.outdate_alert_days %}
+        {% elif current_section.extra.outdate_alert_days is defined %}
+          {% set outdate_alert_days = current_section.extra.outdate_alert_days %}
+        {% else %}
+          {% set outdate_alert_days = 30 %}
+        {% endif %}
+        {% if current_section.extra.outdate_alert_text_before is defined %}
+          {% set outdate_alert_text_before = current_section.extra.outdate_alert_text_before %}
+        {% else %}
+          {% set outdate_alert_text_before = "" %}
+        {% endif %}
+        {% if current_section.extra.outdate_alert_text_after is defined %}
+          {% set outdate_alert_text_after = current_section.extra.outdate_alert_text_after %}
+        {% else %}
+          {% set outdate_alert_text_after = "" %}
+        {% endif %}
+
+        {% if show_outdate_alert -%}
+        <blockquote id="outdate_alert" class="callout caution hidden" data-days="{{ outdate_alert_days }}"
+          data-alert-text-before="{{ outdate_alert_text_before }}"
+          data-alert-text-after="{{ outdate_alert_text_after }}">
+          <div class="content"></div>
+        </blockquote>
+        {% endif %}
+
+        {{ page.content | safe }}
+      </article>
+
+      {% if page.higher or page.lower %}
+      <nav class="post-pagination" aria-label="Post navigation">
+        {% if page.higher %}
+        <div class="post-pagination-item prev">
+          <span class="post-pagination-label">Prev</span>
+          <a class="post-pagination-title instant" href="{{ page.higher.permalink }}">{{ page.higher.title }}</a>
+        </div>
+        {% endif %}
+        {% if page.lower %}
+        <div class="post-pagination-item next">
+          <span class="post-pagination-label">Next</span>
+          <a class="post-pagination-title instant" href="{{ page.lower.permalink }}">{{ page.lower.title }}</a>
+        </div>
+        {% endif %}
+      </nav>
+      {% endif %}
+
+      {% if page.extra.reaction is defined %}{% set show_reaction = page.extra.reaction %}{% else %}{% set show_reaction = config.extra.reaction %}{% endif %}
+      {% if show_reaction %}
+      <div class="reaction {{ config.extra.reaction_align }}" data-endpoint="{{ config.extra.reaction_endpoint }}"></div>
+      {% endif %}
+
+      {% if page.extra.comment is defined %}{% set show_comment = page.extra.comment %}{% else %}{% set show_comment = current_section.extra.comment %}{% endif %}
+      {% if show_comment %}
+      <div class="giscus"></div>
+      {% include "_giscus_script.html" %}
+      {% endif %}
+    </div>
+
+    {% include "_footer.html" %}
+  </main>
+</div>
+{% endblock content %}
+
+{% block script %}
+<script src="/js/lightense.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const headingSelector = "article.prose h2[id], article.prose h3[id]";
+    const headings = Array.from(document.querySelectorAll(headingSelector));
+    if (!headings.length) return;
+
+    const tocLinks = Array.from(
+      document.querySelectorAll('aside nav a[href^="#"], .mobile-toc a[href^="#"]')
+    );
+    if (!tocLinks.length) return;
+
+    const linksById = new Map();
+    for (const link of tocLinks) {
+      const id = decodeURIComponent(link.getAttribute("href").slice(1));
+      if (!linksById.has(id)) linksById.set(id, []);
+      linksById.get(id).push(link);
+    }
+
+    const clearActive = () => {
+      for (const link of tocLinks) {
+        link.classList.remove("active");
+        link.classList.remove("in-view");
+      }
+    };
+
+    const setActive = (activeId, visibleIds) => {
+      clearActive();
+      for (const id of visibleIds) {
+        const visibleLinks = linksById.get(id);
+        if (!visibleLinks) continue;
+        for (const link of visibleLinks) link.classList.add("in-view");
+      }
+
+      const matchedLinks = linksById.get(activeId);
+      if (!matchedLinks) return;
+      for (const link of matchedLinks) link.classList.add("active");
+    };
+
+    const findActiveHeading = () => {
+      const offset = 140;
+      let activeHeading = headings[0];
+      const visibleIds = new Set();
+      const viewportHeight = window.innerHeight;
+
+      for (const heading of headings) {
+        const rect = heading.getBoundingClientRect();
+
+        if (rect.top < viewportHeight && rect.bottom > offset) {
+          visibleIds.add(heading.id);
+        }
+
+        if (rect.top - offset <= 0) {
+          activeHeading = heading;
+        } else {
+          break;
+        }
+      }
+
+      visibleIds.add(activeHeading.id);
+      setActive(activeHeading.id, visibleIds);
+    };
+
+    let ticking = false;
+    const syncActiveHeading = () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(() => {
+        findActiveHeading();
+        ticking = false;
+      });
+    };
+
+    syncActiveHeading();
+    document.addEventListener("scroll", syncActiveHeading, { passive: true });
+    window.addEventListener("resize", syncActiveHeading);
+    window.addEventListener("hashchange", syncActiveHeading);
+  });
+</script>
+{% if page.extra.mermaid %}
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+</script>
+{% endif %}
+{% endblock script %}
