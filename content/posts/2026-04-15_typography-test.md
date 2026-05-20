@@ -3,7 +3,7 @@ title = "タイポグラフィ確認用ページ"
 date = 2026-04-15
 
 [taxonomies]
-tags = ["article", "test"]
+tags = ["sample"]
 
 [extra]
 math = true
