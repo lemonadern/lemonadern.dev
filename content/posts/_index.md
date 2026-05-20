@@ -2,6 +2,7 @@
 title = "Posts"
 description = "New posts."
 template = "posts.html"
+generate_feeds = true
 page_template = "post.html"
 insert_anchor_links = "right"
 
