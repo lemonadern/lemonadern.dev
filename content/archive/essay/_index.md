@@ -1,5 +1,5 @@
 +++
-title = "Essay"
+title = "essay"
 description = "Essays."
 aliases = ["/essay/"]
 sort_by = "date"
@@ -9,7 +9,7 @@ insert_anchor_links = "right"
 
 [extra]
 lang = "ja"
-title = "Essay"
+title = "essay"
 subtitle = "essay"
 date_format = "%Y-%m-%d"
 categorized = false

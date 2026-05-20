@@ -1,5 +1,5 @@
 +++
-title = "Blog"
+title = "blog"
 description = "Blog posts."
 aliases = ["/blog/"]
 sort_by = "date"
@@ -9,7 +9,7 @@ insert_anchor_links = "right"
 
 [extra]
 lang = "ja"
-title = "Blog"
+title = "blog"
 subtitle = "blog"
 date_format = "%Y-%m-%d"
 categorized = false

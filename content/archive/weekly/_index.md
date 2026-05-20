@@ -1,5 +1,5 @@
 +++
-title = "Weekly"
+title = "weekly"
 description = "Weekly archive."
 aliases = ["/weekly/"]
 sort_by = "date"
@@ -9,7 +9,7 @@ insert_anchor_links = "right"
 
 [extra]
 lang = "ja"
-title = "Weekly"
+title = "weekly"
 subtitle = "archive"
 date_format = "%Y-%m-%d"
 categorized = false

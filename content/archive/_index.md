@@ -17,8 +17,8 @@ reaction = false
 
 移行元 `lume` ブログから持ってきたコンテンツです。
 
-- [Blog](/archive/blog/)
-- [Essay](/archive/essay/)
-- [Nightly](/archive/nightly/)
-- [Weekly](/archive/weekly/)
-- [Monthly](/archive/monthly/)
+- [blog](/archive/blog/)
+- [essay](/archive/essay/)
+- [nightly](/archive/nightly/)
+- [weekly](/archive/weekly/)
+- [monthly](/archive/monthly/)

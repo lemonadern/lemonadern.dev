@@ -1,5 +1,5 @@
 +++
-title = "Monthly"
+title = "monthly"
 description = "Monthly archive."
 aliases = ["/monthly/"]
 sort_by = "date"
@@ -9,7 +9,7 @@ insert_anchor_links = "right"
 
 [extra]
 lang = "ja"
-title = "Monthly"
+title = "monthly"
 subtitle = "archive"
 date_format = "%Y-%m"
 categorized = false
