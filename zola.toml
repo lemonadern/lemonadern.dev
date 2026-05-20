@@ -1,6 +1,6 @@
 base_url = "https://lemonadern.dev"
 title = "器楽的緩怠"
-description = "Taishi Naka (lemonadern) の個人ブログ"
+description = "lemonadern's personal blog"
 default_language = "ja"
 theme = "serene"
 output_dir = "public"
