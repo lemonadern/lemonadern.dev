@@ -4,8 +4,6 @@ description = "日本語訳しないほうが良いときもある"
 date = 2023-02-02
 aliases = ["/nightly/2023/02/02/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

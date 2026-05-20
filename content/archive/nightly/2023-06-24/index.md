@@ -4,8 +4,6 @@ description = "祝いワイン"
 date = 2023-06-24
 aliases = ["/nightly/2023/06/24/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

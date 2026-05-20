@@ -4,8 +4,6 @@ description = "浜松ドライブ"
 date = 2023-08-15
 aliases = ["/nightly/2023/08/15/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

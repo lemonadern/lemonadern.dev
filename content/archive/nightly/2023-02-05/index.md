@@ -4,8 +4,6 @@ description = "Vote for VOUGHT!!!"
 date = 2023-02-05
 aliases = ["/nightly/2023/02/05/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

@@ -4,8 +4,6 @@ description = "OAuth、むじー（山口コンボイ）"
 date = 2023-01-05
 aliases = ["/nightly/2023/01/05/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

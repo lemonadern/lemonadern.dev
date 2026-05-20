@@ -4,8 +4,6 @@ description = "ぷかぷか"
 date = 2023-08-06
 aliases = ["/nightly/2023/08/06/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

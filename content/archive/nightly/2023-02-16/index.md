@@ -4,8 +4,6 @@ description = "かっこいい言葉.push( 反駁 )"
 date = 2023-02-16
 aliases = ["/nightly/2023/02/16/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

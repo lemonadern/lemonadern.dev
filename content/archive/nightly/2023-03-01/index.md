@@ -4,8 +4,6 @@ description = "VM vs. 拡張NFA"
 date = 2023-03-01
 aliases = ["/nightly/2023/03/01/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

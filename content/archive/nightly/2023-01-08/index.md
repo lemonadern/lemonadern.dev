@@ -4,8 +4,6 @@ description = "ありがたいんだって〜（仁木恭平）"
 date = 2023-01-08
 aliases = ["/nightly/2023/01/08/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

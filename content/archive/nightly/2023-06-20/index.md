@@ -4,8 +4,6 @@ description = "鼻血"
 date = 2023-06-20
 aliases = ["/nightly/2023/06/20/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

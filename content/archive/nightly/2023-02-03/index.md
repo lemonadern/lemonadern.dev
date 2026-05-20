@@ -4,8 +4,6 @@ description = "”I SMELL A RAT.”"
 date = 2023-02-03
 aliases = ["/nightly/2023/02/03/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

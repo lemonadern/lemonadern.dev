@@ -4,8 +4,6 @@ description = "the \"reader's\" high"
 date = 2023-03-15
 aliases = ["/nightly/2023/03/15/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

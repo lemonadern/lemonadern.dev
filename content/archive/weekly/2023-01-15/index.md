@@ -4,8 +4,6 @@ description = "1月第2週目"
 date = 2023-01-15
 aliases = ["/weekly/2023/01/2023-01-15_2nd/", "/weekly/2023/01/2023-01-15_2nd.md"]
 
-[taxonomies]
-tags = ["weekly"]
 +++
 
 

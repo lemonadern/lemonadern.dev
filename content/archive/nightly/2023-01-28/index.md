@@ -4,8 +4,6 @@ description = "HumanChatGPTとは俺のことよ"
 date = 2023-01-28
 aliases = ["/nightly/2023/01/28/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

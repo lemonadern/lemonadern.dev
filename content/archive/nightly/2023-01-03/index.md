@@ -4,8 +4,6 @@ description = "日報がいい感じになってきた"
 date = 2023-01-03
 aliases = ["/nightly/2023/01/03/"]
 
-[taxonomies]
-tags = ["nightly"]
 
 [extra]
 math = true

@@ -4,8 +4,6 @@ description = "Coffee (drinking) machine"
 date = 2023-02-11
 aliases = ["/nightly/2023/02/11/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

@@ -4,8 +4,6 @@ description = "白昼銀河高速"
 date = 2023-01-21
 aliases = ["/nightly/2023/01/21/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

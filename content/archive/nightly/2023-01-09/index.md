@@ -4,8 +4,6 @@ description = "学校が始まっても続けられるかどうか"
 date = 2023-01-09
 aliases = ["/nightly/2023/01/09/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

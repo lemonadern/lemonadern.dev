@@ -4,8 +4,6 @@ description = "物理層!!!"
 date = 2023-02-18
 aliases = ["/nightly/2023/02/18/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

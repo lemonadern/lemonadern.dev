@@ -4,8 +4,6 @@ description = "邦訳沼"
 date = 2023-03-04
 aliases = ["/nightly/2023/03/04/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

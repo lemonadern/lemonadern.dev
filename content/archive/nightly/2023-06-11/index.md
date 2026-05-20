@@ -4,8 +4,6 @@ description = "休日"
 date = 2023-06-11
 aliases = ["/nightly/2023/06/11/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

@@ -4,8 +4,6 @@ description = "正規表現、むじー（山口コンボイ）"
 date = 2023-01-06
 aliases = ["/nightly/2023/01/06/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

@@ -4,8 +4,6 @@ description = "言語論とは"
 date = 2023-01-12
 aliases = ["/nightly/2023/01/12/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

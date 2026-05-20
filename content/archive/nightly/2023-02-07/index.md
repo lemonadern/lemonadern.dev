@@ -4,8 +4,6 @@ description = "I'm living in the stub."
 date = 2023-02-07
 aliases = ["/nightly/2023/02/07/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

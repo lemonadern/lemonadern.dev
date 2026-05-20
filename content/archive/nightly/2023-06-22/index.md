@@ -4,8 +4,6 @@ description = "プロポーザル発表"
 date = 2023-06-22
 aliases = ["/nightly/2023/06/22/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

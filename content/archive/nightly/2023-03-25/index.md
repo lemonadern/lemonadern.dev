@@ -4,8 +4,6 @@ description = "ボッシュシーズン1（写経）"
 date = 2023-03-25
 aliases = ["/nightly/2023/03/25/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

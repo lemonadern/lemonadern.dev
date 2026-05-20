@@ -4,8 +4,6 @@ description = "はじめての月報"
 date = 2023-01-01
 aliases = ["/monthly/2023/01-jan/", "/monthly/2023/01-jan.md"]
 
-[taxonomies]
-tags = ["monthly"]
 +++
 
 

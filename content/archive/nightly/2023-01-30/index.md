@@ -4,8 +4,6 @@ description = "一年のうち12分の1が終わろうとしている"
 date = 2023-01-30
 aliases = ["/nightly/2023/01/30/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

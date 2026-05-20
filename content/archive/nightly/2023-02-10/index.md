@@ -4,8 +4,6 @@ description = "History of technology is a spiral."
 date = 2023-02-10
 aliases = ["/nightly/2023/02/10/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

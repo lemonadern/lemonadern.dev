@@ -4,8 +4,6 @@ description = "The economics as Modeling"
 date = 2023-02-14
 aliases = ["/nightly/2023/02/14/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

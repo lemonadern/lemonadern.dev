@@ -4,8 +4,6 @@ description = "新刊：人は自制力が9割"
 date = 2023-02-09
 aliases = ["/nightly/2023/02/09/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

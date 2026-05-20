@@ -4,8 +4,6 @@ description = "経験値としての Immutable Data Modeling"
 date = 2023-02-01
 aliases = ["/nightly/2023/02/01/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

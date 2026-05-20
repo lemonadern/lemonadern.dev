@@ -4,8 +4,6 @@ description = "診断：アマプラ熱"
 date = 2023-02-06
 aliases = ["/nightly/2023/02/06/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

@@ -4,8 +4,6 @@ description = "活字チェイサー"
 date = 2023-01-16
 aliases = ["/nightly/2023/01/16/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

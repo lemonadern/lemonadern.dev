@@ -4,8 +4,6 @@ description = "lume との格闘"
 date = 2023-01-02
 aliases = ["/nightly/2023/01/02/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

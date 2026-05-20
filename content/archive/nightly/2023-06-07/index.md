@@ -4,8 +4,6 @@ description = "BitVisorのはじまり"
 date = 2023-06-07
 aliases = ["/nightly/2023/06/07/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

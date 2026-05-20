@@ -4,8 +4,6 @@ description = "sleep.hs"
 date = 2023-01-24
 aliases = ["/nightly/2023/01/24/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

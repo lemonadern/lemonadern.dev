@@ -4,8 +4,6 @@ description = "マッチョイズム"
 date = 2023-07-24
 aliases = ["/nightly/2023/07/24/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

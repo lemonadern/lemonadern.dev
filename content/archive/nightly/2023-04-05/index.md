@@ -4,8 +4,6 @@ description = "Notionが使えなくなった"
 date = 2023-04-05
 aliases = ["/nightly/2023/04/05/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 

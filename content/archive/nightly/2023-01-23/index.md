@@ -4,8 +4,6 @@ description = "Haskell for Great Good"
 date = 2023-01-23
 aliases = ["/nightly/2023/01/23/"]
 
-[taxonomies]
-tags = ["nightly"]
 +++
 
 
