@@ -7,6 +7,7 @@ tags = ["sample"]
 
 [extra]
 math = true
+heading_hashes = true
 +++
 
 
