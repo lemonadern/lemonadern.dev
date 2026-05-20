@@ -1,13 +1,13 @@
 +++
 title = "Posts"
-description = "Blog and essay posts."
+description = "New posts."
 template = "posts.html"
 insert_anchor_links = "right"
 
 [extra]
 lang = "ja"
 title = "Posts"
-subtitle = "blog + essay"
+subtitle = "new posts"
 date_format = "%Y-%m-%d"
 back_to_top = true
 toc = true

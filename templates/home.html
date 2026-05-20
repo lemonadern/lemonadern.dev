@@ -39,15 +39,7 @@
 {% block header %}{% endblock header %}
 
 {% block content %}
-{% set blog_section = get_section(path="blog/_index.md") %}
-{% set essay_section = get_section(path="essay/_index.md") %}
-{% set_global posts = [] %}
-{% for post in blog_section.pages %}
-  {% set_global posts = posts | concat(with=post) %}
-{% endfor %}
-{% for post in essay_section.pages %}
-  {% set_global posts = posts | concat(with=post) %}
-{% endfor %}
+{% set posts_section = get_section(path="posts/_index.md") %}
 
 <div id="wrapper">
   <main>
@@ -97,7 +89,7 @@
     {% if section.extra.recent %}
     <section class="layout-list">
       <div class="post-list">
-        {% for post in posts | sort(attribute="date") | reverse | slice(end=section.extra.recent_max) %}
+        {% for post in posts_section.pages | sort(attribute="date") | reverse | slice(end=section.extra.recent_max) %}
         <a class="post instant {% if post.extra.featured %}featured{% endif %}" href="{{ post.permalink }}">
           <span>{{ post.title }}</span>
           <span class="date">{{ post.date | date(format=section.extra.date_format) }}</span>
