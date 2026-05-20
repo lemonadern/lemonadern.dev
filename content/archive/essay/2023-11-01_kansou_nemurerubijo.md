@@ -4,7 +4,7 @@ date = 2023-11-01
 aliases = ["/essay/2023-11-01_kansou_nemurerubijo/"]
 
 [taxonomies]
-tags = ["essay"]
+tags = ["essay", "book"]
 +++
 
 

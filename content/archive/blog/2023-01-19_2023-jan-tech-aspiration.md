@@ -3,8 +3,6 @@ title = "Jan/2023 技術関連やりたいこと集"
 date = 2023-01-19
 aliases = ["/blog/2023-01-19_2023-jan-tech-aspiration/"]
 
-[taxonomies]
-tags = ["article"]
 +++
 
 
