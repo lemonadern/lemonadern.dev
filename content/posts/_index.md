@@ -2,6 +2,7 @@
 title = "Posts"
 description = "New posts."
 template = "posts.html"
+page_template = "post.html"
 insert_anchor_links = "right"
 
 [extra]

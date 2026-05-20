@@ -44,6 +44,7 @@
     flex: 1;
     min-height: auto;
     width: min(100%, var(--main-max-width));
+    margin: 0 auto;
   }
 
   body.blog main,
@@ -156,7 +157,34 @@
     content: "######";
   }
 
+  body.homepage main {
+    min-height: 82vh;
+    min-height: 82dvh;
+    padding: 8rem 0 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  body.homepage #info {
+    margin-bottom: 0.75rem;
+  }
+
+  body.homepage #links {
+    margin: 2.75rem 0 3rem;
+  }
+
+  body.homepage #brief {
+    margin-bottom: 1.5rem;
+  }
+
   @media (max-width: 1040px) {
+    body.homepage main {
+      min-height: 76vh;
+      min-height: 76dvh;
+      padding: 5rem 0 4rem;
+    }
+
     .site-header-inner {
       width: min(100% - 1.5rem, var(--main-max-width));
       padding: 0.4rem 0;
