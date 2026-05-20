@@ -15,7 +15,7 @@ comment = false
 reaction = false
 +++
 
-移行元 `lume` ブログから持ってきたコンテンツです。
+[移行元ブログ（2023-2026）](https://github.com/lemonadern/lume-blog) から移行したコンテンツ
 
 - [blog](/archive/blog/)
 - [essay](/archive/essay/)
