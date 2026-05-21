@@ -290,6 +290,10 @@
       color: var(--text-color);
     }
   }
+
+  #links #right a[aria-label="RSS"] {
+    opacity: 0.8;
+  }
 </style>
 
 <meta property="og:title" content="{% if page.title %}{{ page.title }} | {{ config.title }}{% elif section.title %}{{ section.title }} | {{ config.title }}{% else %}{{ config.title }}{% endif %}">
