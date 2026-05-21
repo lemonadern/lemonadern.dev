@@ -18,6 +18,10 @@ reaction = false
 
 Web と計算機が好きです。
 
+#### Contact
+
+- [email](mailto:contact@lemonadern.dev)
+
 #### Social links
 
 - [GitHub](https://github.com/lemonadern)
