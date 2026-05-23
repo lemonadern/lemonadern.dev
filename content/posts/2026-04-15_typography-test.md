@@ -11,34 +11,60 @@ mermaid = true
 heading_hashes = true
 +++
 
+## 見出し
 
-## 見出し h2
+```md
+### h3
+#### h4
+##### h5
+###### h6
+```
 
-### 見出し h3
-
-#### 見出し h4
-
-##### 見出し h5
-
-###### 見出し h6
+### h3
+#### h4
+##### h5
+###### h6
 
 ## テキスト装飾
 
+```md
+**太字 (bold)**、*イタリック (italic)*、***太字イタリック***、~~打ち消し (strikethrough)~~
+```
+
 **太字 (bold)**、*イタリック (italic)*、***太字イタリック***、~~打ち消し (strikethrough)~~
 
-段落中の混在: これは **重要な語** を含む文で、*強調したい箇所* や ~~削除された記述~~ が混ざっています。
+## 水平線
+
+```md
+---
+```
 
 ---
 
 ## 段落
 
-これは通常の段落テキストです。日本語と English が混在しています。段落が複数行にわたる場合のレンダリングを確認します。Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+```md
+これは通常の段落テキストです。日本語と English が混在しています。Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+これは2つ目の段落です。
+```
+
+これは通常の段落テキストです。日本語と English が混在しています。Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 これは2つ目の段落です。
 
 ## リスト
 
 ### 箇条書き
+
+```md
+- アイテム 1
+- アイテム 2
+  - ネストされたアイテム 2-1
+  - ネストされたアイテム 2-2
+    - さらにネスト 2-2-1
+- アイテム 3
+```
 
 - アイテム 1
 - アイテム 2
@@ -49,11 +75,24 @@ heading_hashes = true
 
 ### 番号付きリスト
 
+```md
+1. 最初のアイテム
+2. 2番目のアイテム
+3. 3番目のアイテム
+```
+
 1. 最初のアイテム
 2. 2番目のアイテム
 3. 3番目のアイテム
 
 ### タスクリスト
+
+```md
+- [x] 完了済みのタスク
+- [x] これも完了
+- [ ] 未完了のタスク
+- [ ] これも未完了
+```
 
 - [x] 完了済みのタスク
 - [x] これも完了
@@ -62,15 +101,39 @@ heading_hashes = true
 
 ## リンク
 
+```md
 [通常のリンク](https://github.com/lemonadern)
 
-段落の中に[インラインリンク](https://github.com/lemonadern)が含まれる場合のスタイルです。長いURLの折り返し確認: [https://example.com/very/long/path/that/should/break/appropriately/in/the/layout](https://example.com/very/long/path/that/should/break/appropriately/in/the/layout)
+段落の中に[インラインリンク](https://github.com/lemonadern)が含まれる場合のスタイルです。
+```
+
+[通常のリンク](https://github.com/lemonadern)
+
+段落の中に[インラインリンク](https://github.com/lemonadern)が含まれる場合のスタイルです。
 
 ## コード
 
-インラインコード: `const x = 42;` や `deno task build` のようなもの。
+### インラインコード
 
-コードブロック:
+```md
+`const x = 42;` や `deno task build`
+```
+
+`const x = 42;` や `deno task build`
+
+### コードブロック
+
+````md
+```typescript
+import lume from "lume/mod.ts";
+import tailwindCSS from "lume/plugins/tailwindcss.ts";
+
+const site = lume({ src: "./src" });
+site.use(tailwindCSS());
+
+export default site;
+```
+````
 
 ```typescript
 import lume from "lume/mod.ts";
@@ -82,12 +145,19 @@ site.use(tailwindCSS());
 export default site;
 ```
 
-```bash
-deno task build
-deno task serve
-```
+### ファイル名アノテーション付き
 
-ファイル名アノテーション付き:
+````md
+```typescript,name=lume.config.ts
+import lume from "lume/mod.ts";
+import tailwindCSS from "lume/plugins/tailwindcss.ts";
+
+const site = lume({ src: "./src" });
+site.use(tailwindCSS());
+
+export default site;
+```
+````
 
 ```typescript,name=lume.config.ts
 import lume from "lume/mod.ts";
@@ -101,8 +171,21 @@ export default site;
 
 ## 引用
 
-> これは blockquote です。引用文のスタイルを確認します。
+```md
+> これは blockquote です。引用文のスタイルを確認します。  
 > 複数行にわたる引用も確認します。
+```
+
+> これは blockquote です。引用文のスタイルを確認します。  
+> 複数行にわたる引用も確認します。
+
+### ネストした引用
+
+```md
+> ネストした引用の外側
+> > ネストした引用の内側
+> > > さらに深いネスト
+```
 
 > ネストした引用の外側
 > > ネストした引用の内側
@@ -110,57 +193,130 @@ export default site;
 
 ## テーブル
 
-| 列 1 | 列 2 | 列 3 |
-|------|------|------|
+```md
+| 列 1   | 列 2   | 列 3   |
+|--------|--------|--------|
+| セル A | セル B | セル C |
+| セル D | セル E | セル F |
+```
+
+| 列 1   | 列 2   | 列 3   |
+|--------|--------|--------|
 | セル A | セル B | セル C |
 | セル D | セル E | セル F |
 
 ## 数式 (KaTeX)
 
-インライン数式: $E = mc^2$
+### インライン数式
 
-ブロック数式:
+```md
+$E = mc^2$
+```
+
+$E = mc^2$
+
+### ブロック数式
+
+```md
+$$
+\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
+$$
+```
 
 $$
 \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
 $$
 
-$$
-\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}
-$$
-
 ## コールアウト
+
+<!-- コードブロック内のショートコード記法は {%/* ... */%} でエスケープしている。そのままだと Zola がコードブロック内でも展開してしまうため。 -->
+
+### note
+
+```
+{%/* note() */%}
+これは **note** です。Markdown も使えます。
+{%/* end */%}
+```
 
 {% note() %}
 これは **note** です。Markdown も使えます。
 {% end %}
 
+### tip
+
+```
+{%/* tip() */%}
+これは **tip** です。
+{%/* end */%}
+```
+
 {% tip() %}
 これは **tip** です。
 {% end %}
+
+### warning
+
+```
+{%/* warning() */%}
+これは **warning** です。
+{%/* end */%}
+```
 
 {% warning() %}
 これは **warning** です。
 {% end %}
 
+### important
 
-{% warning(title="注意") %}
-これは **warning** です。
-{% end %}
+```
+{%/* important() */%}
+これは **important** です。
+{%/* end */%}
+```
 
 {% important() %}
 これは **important** です。
 {% end %}
 
+### caution
+
+```
+{%/* caution() */%}
+これは **caution** です。
+{%/* end */%}
+```
+
 {% caution() %}
 これは **caution** です。
 {% end %}
 
-{% note(title="タイトル付き") %}
+### タイトル付き
+
+```
+{%/* warning(title="注意") */%}
+`title` 引数を渡すとタイトルが付きます。
+{%/* end */%}
+```
+
+{% warning(title="注意") %}
 `title` 引数を渡すとタイトルが付きます。
 {% end %}
 
 ## Mermaid
+
+### flowchart
+
+```
+{%/* mermaid() */%}
+flowchart LR
+    A[開始] --> B{条件}
+    B -->|Yes| C[処理 A]
+    B -->|No| D[処理 B]
+    C --> E[終了]
+    D --> E
+{%/* end */%}
+```
 
 {% mermaid() %}
 flowchart LR
@@ -171,6 +327,18 @@ flowchart LR
     D --> E
 {% end %}
 
+### sequenceDiagram
+
+```
+{%/* mermaid() */%}
+sequenceDiagram
+    participant ブラウザ
+    participant サーバ
+    ブラウザ->>サーバ: GET /api/data
+    サーバ-->>ブラウザ: 200 OK
+{%/* end */%}
+```
+
 {% mermaid() %}
 sequenceDiagram
     participant ブラウザ
@@ -180,6 +348,12 @@ sequenceDiagram
 {% end %}
 
 ## 脚注
+
+```md
+本文中に脚注[^1]を含む場合のレンダリングです。
+
+[^1]: これが脚注の内容です。
+```
 
 本文中に脚注[^1]を含む場合のレンダリングです。
 
