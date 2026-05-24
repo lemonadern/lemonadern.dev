@@ -84,7 +84,7 @@
   <main>
     {{ macros::back_link(path = get_url(path=current_section.path)) }}
 
-    <div>
+    <div class="post-body">
       {% if page.extra.copy is defined %}{% set allow_copy = page.extra.copy %}{% else %}{% set allow_copy = current_section.extra.copy %}{% endif %}
       {% if page.extra.heading_hashes is defined %}{% set show_heading_hashes = page.extra.heading_hashes %}{% else %}{% set show_heading_hashes = false %}{% endif %}
       {% if allow_copy %}
@@ -92,7 +92,7 @@
       {% set check_icon = load_data(path="icon/check.svg") %}
       <div id="copy-cfg" style="display: none;" data-copy-icon="{{ copy_icon }}" data-check-icon="{{ check_icon }}"></div>
       {% endif %}
-      <article class="prose{% if show_heading_hashes %} show-heading-hashes{% endif %}">
+      <article class="prose post-header-article">
         <h1>{{ page.title }}</h1>
         {% if page.description %}
         <p class="nightly-desc">{{ page.description }}</p>
@@ -108,31 +108,33 @@
           </div>
           {% endif %}
         </div>
+      </article>
 
-        {% if show_toc and page.toc %}
-        <details class="mobile-toc">
-          <summary>Table of Contents</summary>
-          <nav aria-label="Table of contents">
-            <ul>
-              {% for h2 in page.toc %}
-              <li>
-                <a class="h2" href="#{{ h2.id | safe }}">{{ h2.title }}</a>
-                {% if h2.children %}
-                <ul>
-                  {% for h3 in h2.children %}
-                  <li>
-                    <a class="h3" href="#{{ h3.id | safe }}">{{ h3.title }}</a>
-                  </li>
-                  {% endfor %}
-                </ul>
-                {% endif %}
-              </li>
-              {% endfor %}
-            </ul>
-          </nav>
-        </details>
-        {% endif %}
+      {% if show_toc and page.toc %}
+      <details class="mobile-toc">
+        <summary>Table of Contents</summary>
+        <nav aria-label="Table of contents">
+          <ul>
+            {% for h2 in page.toc %}
+            <li>
+              <a class="h2" href="#{{ h2.id | safe }}">{{ h2.title }}</a>
+              {% if h2.children %}
+              <ul>
+                {% for h3 in h2.children %}
+                <li>
+                  <a class="h3" href="#{{ h3.id | safe }}">{{ h3.title }}</a>
+                </li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+            </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </details>
+      {% endif %}
 
+      <article class="prose{% if show_heading_hashes %} show-heading-hashes{% endif %}">
         {% if page.extra.outdate_alert is defined %}
           {% set show_outdate_alert = page.extra.outdate_alert %}
         {% elif current_section.extra.outdate_alert is defined %}
