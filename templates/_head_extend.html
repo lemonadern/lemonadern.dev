@@ -257,6 +257,10 @@
       flex-shrink: 0;
     }
 
+    .post-body .mobile-toc summary::before {
+      content: attr(data-label);
+    }
+
     .post-body .mobile-toc[open] summary::after {
       content: "-";
     }

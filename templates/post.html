@@ -119,7 +119,7 @@
 
       {% if show_toc and page.toc %}
       <details class="mobile-toc">
-        <summary>Table of Contents</summary>
+        <summary aria-label="Table of Contents" data-label="Table of Contents"></summary>
         <nav aria-label="Table of contents">
           <ul>
             {% for h2 in page.toc %}
