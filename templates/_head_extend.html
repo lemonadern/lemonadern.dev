@@ -328,6 +328,18 @@
     color: #585858;
   }
 
+  .prose .footnote-reference a {
+    border-bottom: none;
+  }
+
+  .prose .footnote-reference a::before {
+    content: "[^";
+  }
+
+  .prose .footnote-reference a::after {
+    content: "]";
+  }
+
 </style>
 
 {% if page and page.summary %}
