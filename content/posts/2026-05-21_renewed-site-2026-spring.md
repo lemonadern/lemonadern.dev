@@ -10,9 +10,11 @@ lang = "ja"
 heading_hashes = true
 +++
 
-このサイト [lemonadern.dev](https://lemonadern.dev/) をリニューアルした。
+このサイト [lemonadern.dev](https://lemonadern.dev/) をリニューアルした。これまでの経緯のほか、新しく採用した SSG であるところの Zola について書いておく。
 
 リポジトリは[こちら](https://github.com/lemonadern/lemonadern.dev)。
+
+<!-- more -->
 
 ## Lume 時代
 

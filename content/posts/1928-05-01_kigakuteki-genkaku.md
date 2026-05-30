@@ -1,6 +1,7 @@
 +++
 title = "器楽的幻覚"
 date = 1928-05-01
+description = "梶井基次郎 『檸檬・ある心の風景　他二十編』より"
 
 [extra]
 lang = "ja"

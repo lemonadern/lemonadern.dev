@@ -343,7 +343,7 @@
 </style>
 
 {% if page and page.summary %}
-{% set social_desc = page.summary %}
+{% set social_desc = page.summary | striptags | truncate(length=200) %}
 {% elif page and page.description %}
 {% set social_desc = page.description %}
 {% elif section and section.description %}

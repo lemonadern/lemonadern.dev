@@ -1,6 +1,7 @@
 +++
 title = "タイポグラフィ確認用ページ"
 date = 2026-04-15
+description = "このブログにおいて利用可能な記法とそのレンダリング結果の一覧"
 
 [taxonomies]
 tags = ["sample"]
