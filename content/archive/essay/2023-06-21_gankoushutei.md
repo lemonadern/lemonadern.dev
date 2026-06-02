@@ -1,7 +1,7 @@
 +++
 title = "「眼高手低」の解釈"
 date = 2023-06-21
-aliases = ["/essay/2023-06-21_gankoushutei/"]
+aliases = ["/essay/2023-06-21_gankoushutei/", "/essay/gankoushutei/"]
 
 [taxonomies]
 tags = ["essay"]

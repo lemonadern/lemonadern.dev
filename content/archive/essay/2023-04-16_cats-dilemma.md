@@ -1,7 +1,7 @@
 +++
 title = "猫への憧憬とレッテル貼りのジレンマ"
 date = 2023-04-16
-aliases = ["/essay/2023-04-16_cats-dilemma/"]
+aliases = ["/essay/2023-04-16_cats-dilemma/", "/essay/cats-dilemma/"]
 
 [taxonomies]
 tags = ["essay"]

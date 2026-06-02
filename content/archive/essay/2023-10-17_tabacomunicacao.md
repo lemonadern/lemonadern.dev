@@ -1,7 +1,7 @@
 +++
 title = "タバコミュニカカオ"
 date = 2023-10-17
-aliases = ["/essay/2023-10-17_tabacomunicacao/"]
+aliases = ["/essay/2023-10-17_tabacomunicacao/", "/essay/tabacomunicacao/"]
 
 [taxonomies]
 tags = ["essay"]

@@ -1,7 +1,7 @@
 +++
 title = "修辞と偶像崇拝"
 date = 2023-04-26
-aliases = ["/essay/2023-04-26_rhetoric-and-idolatry/"]
+aliases = ["/essay/2023-04-26_rhetoric-and-idolatry/", "/essay/rhetoric-and-idolatry/"]
 
 [taxonomies]
 tags = ["essay"]

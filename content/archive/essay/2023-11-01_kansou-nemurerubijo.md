@@ -1,7 +1,7 @@
 +++
 title = "人間的完成の喪失（川端康成『眠れる美女』を読んで）"
 date = 2023-11-01
-aliases = ["/essay/2023-11-01_kansou_nemurerubijo/"]
+aliases = ["/essay/2023-11-01_kansou_nemurerubijo/", "/essay/kansou_nemurerubijo/", "/archive/essay/kansou_nemurerubijo/"]
 
 [taxonomies]
 tags = ["essay", "book"]

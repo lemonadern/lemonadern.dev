@@ -1,7 +1,7 @@
 +++
 title = "技術の膾炙と主人公たち"
 date = 2023-07-04
-aliases = ["/essay/2023-07-04_tech-popularity-and-rise-of-heroes/"]
+aliases = ["/essay/2023-07-04_tech-popularity-and-rise-of-heroes/", "/essay/tech-popularity-and-rise-of-heroes/"]
 
 [taxonomies]
 tags = ["essay"]

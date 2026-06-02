@@ -1,7 +1,7 @@
 +++
 title = "技術ノスタルジーをやめろ"
 date = 2023-04-27
-aliases = ["/essay/2023-04-27_stop-tech-nostalgia/"]
+aliases = ["/essay/2023-04-27_stop-tech-nostalgia/", "/essay/stop-tech-nostalgia/"]
 
 [taxonomies]
 tags = ["essay"]
