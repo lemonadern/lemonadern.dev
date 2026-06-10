@@ -1,6 +1,7 @@
 +++
 title = "ghq rm コマンドの経緯について"
 date = 2026-06-09
+description = "ghq に rm コマンドが入った経緯を分かる範囲でまとめました"
 
 [taxonomies]
 tags = ["tech", "archaeology"]

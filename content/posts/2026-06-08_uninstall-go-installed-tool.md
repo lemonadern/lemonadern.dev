@@ -1,6 +1,7 @@
 +++
 title = "go install したものをアンインストールする"
 date = 2026-06-08
+description = "go install したツールをアンインストールする方法について書いた"
 
 [taxonomies]
 tags = ["tech", "jot"]
