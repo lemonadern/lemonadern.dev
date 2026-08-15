@@ -53,6 +53,31 @@ extract_title() {
     -e "s/^title[[:space:]]*=[[:space:]]*'(.*)'[[:space:]]*\$/\\1/"
 }
 
+# Pull the `[taxonomies] tags = [...]` array from a frontmatter block, as a
+# space-separated list suitable for `--input tags=...`. Best-effort: unlike
+# the title, tags aren't required, so any parsing failure just yields an
+# empty string and generation continues without them.
+extract_tags() {
+  local taxonomies_block tags_line
+  # Slice from the `[taxonomies]` header to the next `[` header (or EOF).
+  taxonomies_block="$(printf '%s\n' "$1" | awk '
+    /^\[taxonomies\][[:space:]]*$/ { found=1; next }
+    found && /^\[/ { exit }
+    found { print }
+  ')"
+  [[ -z "${taxonomies_block}" ]] && return
+  tags_line="$(printf '%s\n' "${taxonomies_block}" | grep -m1 -E '^tags[[:space:]]*=')"
+  [[ -z "${tags_line}" ]] && return
+  # Expect a single-line array: tags = ["a", "b", "c"]. Bail out (empty) on
+  # anything else rather than risk a wrong extraction.
+  if [[ ! "${tags_line}" =~ ^tags[[:space:]]*=[[:space:]]*\[(.*)\][[:space:]]*$ ]]; then
+    return
+  fi
+  local inner="${BASH_REMATCH[1]}"
+  # Pull out each quoted string in the array.
+  grep -oE '"[^"]*"|'"'"'[^'"'"']*'"'"'' <<<"${inner}" | sed -E "s/^['\"]//; s/['\"]\$//" | tr '\n' ' ' | sed -E 's/[[:space:]]+$//'
+}
+
 is_draft() {
   printf '%s\n' "$1" | grep -qE '^draft[[:space:]]*=[[:space:]]*true[[:space:]]*$'
 }
@@ -70,7 +95,7 @@ process_post() {
   local source_file="$1"
   local base_name="$2" # filename (no dir) or dirname, without extension
 
-  local frontmatter title slug out_file
+  local frontmatter title tags slug out_file
   frontmatter="$(extract_frontmatter "${source_file}")"
 
   if is_draft "${frontmatter}"; then
@@ -89,6 +114,8 @@ process_post() {
     exit 1
   fi
 
+  tags="$(extract_tags "${frontmatter}")"
+
   slug="$(slugify_name "${base_name}")"
   out_file="${out_dir}/${slug}.png"
 
@@ -97,9 +124,10 @@ process_post() {
     return
   fi
 
-  echo "generating: ${out_file} (title: ${title})"
+  echo "generating: ${out_file} (title: ${title}; tags: ${tags})"
   typst compile \
     --input "title=${title}" \
+    --input "tags=${tags}" \
     --font-path "${fonts_dir}" \
     --ppi 72 \
     "${template}" \
