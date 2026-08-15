@@ -47,7 +47,7 @@
 // two stay in sync.
 #let title-block-width = 1040pt
 #let title-block-height = 380pt
-#let tag-gap = 18pt
+#let tag-gap = 40pt
 
 // Render the tag row, e.g. "#tech   #lsp   #zed".
 #let render-tags() = text(size: 26pt, weight: "regular", fill: color-tag)[
