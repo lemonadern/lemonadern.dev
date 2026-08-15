@@ -25,6 +25,22 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Setup Typst
+        uses: typst-community/setup-typst@40d32bb6ccb235bd7f5164cb47cfd40a5ea3a314 # v5.2.0
+
+      # Cache key is a short sha256 over the expected checksums hardcoded in
+      # scripts/fetch-og-fonts.sh (`expected_sha256`). If you repin the fonts
+      # (change `noto_cjk_commit` and the checksums in that script), you must
+      # also change this key so CI doesn't keep serving a stale cache entry.
+      - name: Cache OG image fonts
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: og/fonts
+          key: og-fonts-c455afefd10b
+
+      - name: Generate OG images
+        run: ./scripts/generate-og-images.sh
+
       - name: Build Zola + upload Pages artifact
         uses: lemonadern/zola-github-pages@ec083855bf870ef6d3c0c8b2e8a26a1e0c79f2ae # v1.0.0
         with:
