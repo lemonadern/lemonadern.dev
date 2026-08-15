@@ -5,9 +5,9 @@
 //
 // Renders a 1200x630 PNG with the post's tags, title, and the site name /
 // domain. Palette follows the Serene theme's own steel-blue identity (see
-// themes/serene/screenshot.png) rather than an unrelated color scheme, and
-// the title is set in the regular weight rather than bold to keep things
-// quiet and editorial.
+// themes/serene/screenshot.png) rather than an unrelated color scheme. The
+// title is set in bold to read clearly at a glance, while the tags and
+// footer stay in the regular weight to keep them secondary.
 
 #set page(
   width: 1200pt,
@@ -55,8 +55,8 @@
 ]
 
 // Render a list of bunsetsu segments as the boxed title text used in the
-// title block. Regular weight, kept deliberately non-bold.
-#let render-title-segments(segs) = text(size: 60pt, weight: "regular", fill: color-text)[
+// title block. Bold weight so the title reads clearly as the focal point.
+#let render-title-segments(segs) = text(size: 60pt, weight: "bold", fill: color-text)[
   #for s in segs [#box[#s]]
 ]
 
@@ -155,12 +155,12 @@
   bottom + left,
   dx: 80pt,
   dy: -72pt,
-  text(size: 34pt, weight: "regular", fill: color-footer-primary)[器楽的緩怠],
+  text(size: 42pt, weight: "regular", fill: color-footer-primary)[器楽的緩怠],
 )
 
 #place(
   bottom + right,
   dx: -80pt,
   dy: -72pt,
-  text(size: 26pt, weight: "regular", fill: color-footer-secondary)[lemonadern.dev],
+  text(size: 32pt, weight: "regular", fill: color-footer-secondary)[lemonadern.dev],
 )
