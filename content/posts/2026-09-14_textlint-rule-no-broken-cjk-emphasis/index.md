@@ -1,6 +1,7 @@
 +++
 title = "Markdownで**「強調に失敗する」**パターンを検出するtextlintルールを作った"
 date = 2026-09-14
+description = "Markdownで強調に失敗してアスタリスクが表示されてしまうパターンを検出するtextlintルールを作った。使い方のほか、CommonMarkの仕様に由来する原因や検出の仕組みを紹介する。"
 
 [taxonomies]
 tags = ["textlint", "markdown"]
