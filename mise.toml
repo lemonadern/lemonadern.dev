@@ -1,0 +1,10 @@
+[tools]
+zola = "0.22.1"
+
+[tasks.serve]
+description = "Start dev server (including drafts) at http://127.0.0.1:1024"
+run = "zola serve --drafts"
+
+[tasks.build]
+description = "Build site to public/"
+run = "zola build"
